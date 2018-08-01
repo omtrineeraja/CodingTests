@@ -1,0 +1,8 @@
+C:\CodingTests\CodingTests\bin\Debug\CodingTests.dll
+C:\CodingTests\CodingTests\bin\Debug\CodingTests.pdb
+C:\CodingTests\CodingTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\CodingTests\CodingTests\obj\Debug\CodingTests.csprojAssemblyReference.cache
+C:\CodingTests\CodingTests\obj\Debug\CodingTests.csproj.CoreCompileInputs.cache
+C:\CodingTests\CodingTests\obj\Debug\CodingTests.csproj.CopyComplete
+C:\CodingTests\CodingTests\obj\Debug\CodingTests.dll
+C:\CodingTests\CodingTests\obj\Debug\CodingTests.pdb

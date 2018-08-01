@@ -1,0 +1,42 @@
+<h2 align="center"> Currency Exchange Rates</h2>
+<form [formGroup]="currencyForm" (ngSubmit)="addExchangeRate(currencyForm.value)" role="form" class="form-inline" item-width="10px">
+    <div class="form-container" style="height:100">
+        <label style="font-size:1em">Currency</label>
+        <div class="form-group" style="padding:20px">
+            <select formControlName="currency" (change)="callCurrencyService($event.target.value)">
+                <option *ngFor="let currency of currencies" value={{currency}}>
+                    {{currency}}
+                </option>
+            </select>
+        </div>
+        <label style="font-size:1em">Exchange Rate</label>
+        <div class="form-group" style="padding:30px">
+            <input type="number" formControlName="exrate" pattern="^(\d*\.)?\d+$">
+        </div>
+        <div class="alert" *ngIf="!currencyForm.controls['exrate'].valid && currencyForm.controls['exrate'].touched">Provide a valid numeric rate</div>
+        <button type="submit" class="btn btn-primary" [disabled]="!currencyForm.valid">Add Currency</button>
+    </div>
+</form>
+<div class="form-container">
+    <div>
+        <div *ngIf=exchangeRates>
+            <h3>Base: {{exchangeRates.base}}</h3>
+            <h3>Date: {{exchangeRates.date | date:"M/d/yyyy"}}</h3>
+
+            <table class="table table bordered">
+                <thead>
+                    <tr>
+                        <th>Currency</th>
+                        <th>Rates</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf=rates>
+                    <tr *ngFor="let cur of rates; let i = index;">
+                        <td>{{cur.currency }}</td>
+                        <td>{{cur.rate | number : '1.2-2'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
